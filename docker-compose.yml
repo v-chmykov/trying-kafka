@@ -1,0 +1,29 @@
+networks:
+  kafka-net:
+    driver: bridge
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "${ZOOKEEPER_PORT}:2181"
+    networks:
+      - kafka-net
+  kafka:
+    image: wurstmeister/kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "${KAFKA_PORT}:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: "${KAFKA_HOST}"
+      KAFKA_CREATE_TOPICS: "${KAFKA_TOPICS}"
+      KAFKA_ZOOKEEPER_CONNECT: "${ZOOKEEPER_HOST}:${ZOOKEEPER_PORT}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    links:
+      - zookeeper
+    networks:
+      - kafka-net
+    
+version: '3'

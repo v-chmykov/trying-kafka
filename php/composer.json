@@ -1,0 +1,16 @@
+{
+    "name": "php-kafka-test",
+    "authors": [
+        {
+            "name": "Vladimir Chmykov",
+            "email": "vov.chm@yandex.ru"
+        }
+    ],
+    "require": {
+        "nmred/kafka-php": "v0.2.0.8"
+    },
+    "scripts": {
+        "consumer": "php consumer.php",
+        "producer": "php producer.php"
+    }
+}
