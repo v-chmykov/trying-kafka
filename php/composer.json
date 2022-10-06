@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^8.1",
         "nmred/kafka-php": "v0.2.0.8"
     },
     "scripts": {
