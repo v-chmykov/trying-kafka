@@ -2,7 +2,7 @@
 
 ## Requirements:
 - Docker-compose
-- Php >= 7.1 or NodeJS >=4.5.0
+- Php >= 8.1 or NodeJS >=4.5.0
 
 ## How to run:
 - Run docker containers: `docker-compose up -d`
