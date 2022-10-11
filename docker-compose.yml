@@ -2,14 +2,14 @@ version: '3'
 
 services:
   zookeeper:
-    image: wurstmeister/zookeeper
+    image: wurstmeister/zookeeper:latest
     ports:
       - "${ZOOKEEPER_PORT}:2181"
     networks:
       - kafka-net
 
   kafka:
-    image: wurstmeister/kafka
+    image: wurstmeister/kafka:latest
     depends_on:
       - zookeeper
     ports:
